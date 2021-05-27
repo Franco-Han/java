@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AjaxResponse</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.css">
+<link href="../style.css" rel="stylesheet" />
+</head>
+<body onload="PR.prettyPrint()">
+<pre class="prettyprint">
+<xmp>
+#import <Foundation/Foundation>;
+
+@interface AjaxResponse : NSObject
+
+//是否成功
+@property (nonatomic, strong) BOOL success;
+//状态代码
+@property (nonatomic, strong) NSInteger statusCode;
+//返回消息
+@property (nonatomic, assign) NSString message;
+//数据
+@property (nonatomic, strong) StatisticsSetting data;
+
+
+@end
+</xmp>
+</pre>
+
+<pre class="prettyprint">
+<xmp>
+#import <Foundation/Foundation>;
+
+@interface StatisticsSetting : NSObject
+
+//
+@property (nonatomic, assign) NSString userId;
+//简版表
+@property (nonatomic, strong) BOOL simple;
+//明细表
+@property (nonatomic, strong) BOOL detail;
+//信息对比统计表
+@property (nonatomic, strong) BOOL compare;
+//重复查询统计表
+@property (nonatomic, strong) BOOL duplicate;
+//复查结果变更统计表
+@property (nonatomic, strong) BOOL change;
+//购买方/销售方信息不符统计表
+@property (nonatomic, strong) BOOL company;
+//开票日期不符统计表
+@property (nonatomic, strong) BOOL datematch;
+//同一销售方统计表
+@property (nonatomic, strong) BOOL oneseller;
+
+
+@end
+</xmp>
+</pre>
+
+
+<script src="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:mysql://119.3.182.48:3306/invoice_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
+    username: root
+    password: Djeydhe#1dqp
+security:
+  oauth2:
+    client:
+      client-id: RYXT
+      client-secret: ryxt
+      access-token-uri: http://localhost:9528/oauth/token
+      user-authorization-uri: http://localhost:9528/oauth/authorize
+    resource:
+      jwt:
+        key-uri: http://localhost:9528/oauth/token_key
+mail:
+  host: smtp.sina.com
+  protocol: smtp
+  username: nalanhexuan@sina.com
+  password: 4a0436ca88cbdd95

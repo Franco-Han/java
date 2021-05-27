@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ryxt.mapper.CheckListOcrMapper" >
+ 	<select id="getCheckListOcrInfo" resultType="com.ryxt.entity.CheckListOcrVo" parameterType="java.util.HashMap">
+		SELECT
+		id,
+		userId,
+		url,
+		status,
+        ocrId,
+		reCheck,
+		invoiceCode,
+		invoiceNumber,
+		invoiceDate,
+		createDate,
+		result,
+		reason,
+		invoiceType,
+		checkType,
+		checkCode,
+		purchaser,
+		ocrPurchaser,
+		tin,
+		ocrTin,
+		sellerTin,
+		ocrSellerTin,
+		addressAndTelephone,
+		orcAddressAndTelephone,
+		accountBankAndNumber,
+		ocrAccountBankAndNumber,
+		nameOfGoodsOrTaxableServices,
+		ocrNameOfGoodsOrTaxableServices,
+		specificationType,
+		ocrSpecificationType,
+		unit,
+		ocrUnit,
+		quantity,
+		ocrQuantity,
+		price,
+		ocrPrice,
+		excludingTaxPrice,
+		ocrExcludingTaxPrice,
+		taxRate,
+		ocrTaxRate,
+		totalAmount,
+		ocrTotalAmount,
+		totalAmountOfTax,
+		ocrTotalAmountOfTax,
+		totalAmountOfPriceAndTax,
+		ocrTotalAmountOfPriceAndTax,
+		sellerName,
+		ocrSellerName,
+		sellerAddressAndTelephone,
+		ocrSellerAddressAndTelephone,
+		sellerAccountBankAndNumber,
+		ocrSellerAccountBankAndNumber,
+		remarks,
+		ocrRemarks,
+		payee,
+		ocrPayee,
+		review,
+		ocrReview,
+		drawer,
+		ocrDrawer,
+		deleteFlag
+		FROM
+		(
+		SELECT
+		c.id,
+		c.user_id AS userId,
+		c.url,
+		c.status,
+        c.ocr_id as ocrId,
+		c.re_check AS reCheck,
+		c.invoice_code AS invoiceCode,
+		c.invoice_number AS invoiceNumber,
+		c.invoice_date AS invoiceDate,
+		c.create_date AS createDate,
+		c.result AS result,
+		c.reason AS reason,
+		c.invoice_type AS invoiceType,
+		c.check_type AS checkType,
+		c.check_code AS checkCode,
+		c.purchaser AS purchaser,
+		o.purchaser AS ocrPurchaser,
+		c.tin AS tin,
+		o.tin AS ocrTin,
+		c.seller_tin AS sellerTin,
+		o.seller_tin AS ocrSellerTin,
+		c.address_and_telephone AS addressAndTelephone,
+		o.address_and_telephone AS orcAddressAndTelephone,
+		c.account_bank_and_number AS accountBankAndNumber,
+		o.account_bank_and_number AS ocrAccountBankAndNumber,
+		c.name_of_goods_or_taxable_services AS nameOfGoodsOrTaxableServices,
+		o.name_of_goods_or_taxable_services AS ocrNameOfGoodsOrTaxableServices,
+		c.specification_type AS specificationType,
+		o.specification_type AS ocrSpecificationType,
+		c.unit AS unit,
+		o.unit AS ocrUnit,
+		c.quantity AS quantity,
+		o.quantity AS ocrQuantity,
+		c.price AS price,
+		o.price AS ocrPrice,
+		c.excluding_tax_price AS excludingTaxPrice,
+		o.excluding_tax_price AS ocrExcludingTaxPrice,
+        c.tax_rate AS  taxRate,
+        o.tax_rate AS ocrTaxRate,
+		c.tax_amount AS taxAmount,
+		o.tax_amount AS ocrTaxAmount,
+		c.total_amount AS totalAmount,
+		o.total_amount AS ocrTotalAmount,
+		c.total_amount_of_tax AS totalAmountOfTax,
+		o.total_amount_of_tax AS ocrTotalAmountOfTax,
+		c.total_amount_of_price_and_tax AS totalAmountOfPriceAndTax,
+		o.total_amount_of_price_and_tax AS ocrTotalAmountOfPriceAndTax,
+		c.seller_name AS sellerName,
+		o.seller_name AS ocrSellerName,
+		c.seller_address_and_telephone AS sellerAddressAndTelephone,
+		o.seller_address_and_telephone AS ocrSellerAddressAndTelephone,
+		c.seller_account_bank_and_number AS sellerAccountBankAndNumber,
+		o.seller_account_bank_and_number AS ocrSellerAccountBankAndNumber,
+		c.remarks AS remarks,
+		o.remarks AS ocrRemarks,
+		c.payee AS payee,
+		o.payee AS ocrPayee,
+		c.review AS review,
+		o.review AS ocrReview,
+		c.drawer AS drawer,
+		o.drawer AS ocrDrawer,
+		c.delete_flag AS deleteFlag
+		FROM
+		`check_list` c
+		LEFT JOIN ocr_info o ON   c.ocr_id = o.id
+		) AS a
+		WHERE
+		a.deleteFlag != '1'
+		<if test="userId != null and userId != ''" >
+			AND a.userId=#{userId}
+		</if>
+		<if test="invoiceCode != null and invoiceCode !='' ">
+			AND a.invoiceCode LIKE CONCAT('%',#{invoiceCode}, '%')
+		</if>
+		<if test="invoiceNumber != null and invoiceNumber !='' ">
+			AND a.invoiceNumber LIKE CONCAT('%',#{invoiceNumber}, '%')
+		</if>
+		<if test="invoiceType != null and invoiceType !='' ">
+			AND a.invoiceType LIKE  CONCAT('%',#{invoiceType}, '%')
+		</if>
+		<if test="checkType != null and checkType !='' ">
+			AND a.checkType LIKE  CONCAT('%',#{checkType}, '%')
+		</if>
+		<if test="purchaser != null and purchaser !='' ">
+			AND a.purchaser LIKE CONCAT('%',#{purchaser}, '%')
+		</if>
+		<if test="sellerName != null and sellerName !='' ">
+			AND a.sellerName LIKE  CONCAT('%',#{sellerName}, '%')
+		</if>
+		<if test="result != null and result !='' and result =='其他'">
+			AND a.result != '真票'
+			AND a.result != '假票'
+		</if>
+		<if test="result != null and result !='' and result !='其他'">
+			AND a.result = #{result}
+		</if>
+
+		<if test="istartTime!=null and iendTime!=null">
+			AND a.invoiceDate BETWEEN #{istartTime} AND #{iendTime}
+		</if>
+		<if test="cstartTime!=null and cendTime!=null">
+			AND a.createDate BETWEEN #{cstartTime} AND #{cendTime}
+		</if>
+		ORDER BY
+		a.createDate DESC
+		<if test="page != null and pageSize != null">
+			LIMIT #{page},#{pageSize}
+		</if>
+	</select>
+	<select id="getCheckListOcrCount" resultType="java.lang.Integer" parameterType="java.util.HashMap">
+		SELECT
+		 count(*)
+		FROM
+		(
+		SELECT
+		c.id,
+		c.user_id AS userId,
+		c.url,
+		c.status,
+		c.ocr_id as ocrId,
+		c.re_check AS reCheck,
+		c.invoice_code AS invoiceCode,
+		c.invoice_number AS invoiceNumber,
+		c.invoice_date AS invoiceDate,
+		c.create_date AS createDate,
+		c.result AS result,
+		c.reason AS reason,
+		c.invoice_type AS invoiceType,
+		c.check_type AS checkType,
+		c.check_code AS checkCode,
+		c.purchaser AS purchaser,
+		o.purchaser AS ocrPurchaser,
+		c.tin AS tin,
+		o.tin AS ocrTin,
+		c.address_and_telephone AS addressAndTelephone,
+		o.address_and_telephone AS orcAddressAndTelephone,
+		c.account_bank_and_number AS accountBankAndNumber,
+		o.account_bank_and_number AS ocrAccountBankAndNumber,
+		c.name_of_goods_or_taxable_services AS nameOfGoodsOrTaxableServices,
+		o.name_of_goods_or_taxable_services AS ocrNameOfGoodsOrTaxableServices,
+		c.specification_type AS specificationType,
+		o.specification_type AS ocrSpecificationType,
+		c.unit AS unit,
+		o.unit AS ocrUnit,
+		c.quantity AS quantity,
+		o.quantity AS ocrQuantity,
+		c.price AS price,
+		o.price AS ocrPrice,
+		c.excluding_tax_price AS excludingTaxPrice,
+		o.excluding_tax_price AS ocrExcludingTaxPrice,
+		c.tax_rate AS  taxRate,
+		o.tax_rate AS ocrTaxRate,
+		c.tax_amount AS taxAmount,
+		o.tax_amount AS ocrTaxAmount,
+		c.total_amount AS totalAmount,
+		o.total_amount AS ocrTotalAmount,
+		c.total_amount_of_tax AS totalAmountOfTax,
+		o.total_amount_of_tax AS ocrTotalAmountOfTax,
+		c.total_amount_of_price_and_tax AS totalAmountOfPriceAndTax,
+		o.total_amount_of_price_and_tax AS ocrTotalAmountOfPriceAndTax,
+		c.seller_name AS sellerName,
+		o.seller_name AS ocrSellerName,
+		c.seller_address_and_telephone AS sellerAddressAndTelephone,
+		o.seller_address_and_telephone AS ocrSellerAddressAndTelephone,
+		c.seller_account_bank_and_number AS sellerAccountBankAndNumber,
+		o.seller_account_bank_and_number AS ocrSellerAccountBankAndNumber,
+		c.remarks AS remarks,
+		o.remarks AS ocrRemarks,
+		c.payee AS payee,
+		o.payee AS ocrPayee,
+		c.review AS review,
+		o.review AS ocrReview,
+		c.drawer AS drawer,
+		o.drawer AS ocrDrawer,
+		c.delete_flag AS deleteFlag
+		FROM
+		`check_list` c
+		LEFT JOIN ocr_info o ON  c.ocr_id = o.id
+		) AS a
+		WHERE
+		a.deleteFlag != '1'
+		<if test="userId != null and userId != ''" >
+			AND a.userId=#{userId}
+		</if>
+		<if test="invoiceCode != null and invoiceCode !='' ">
+			AND a.invoiceCode LIKE CONCAT('%',#{invoiceCode}, '%')
+		</if>
+		<if test="invoiceNumber != null and invoiceNumber !='' ">
+			AND a.invoiceNumber LIKE CONCAT('%',#{invoiceNumber}, '%')
+		</if>
+		<if test="invoiceType != null and invoiceType !='' ">
+			AND a.invoiceType LIKE  CONCAT('%',#{invoiceType}, '%')
+		</if>
+		<if test="checkType != null and checkType !='' ">
+			AND a.checkType LIKE  CONCAT('%',#{checkType}, '%')
+		</if>
+		<if test="purchaser != null and purchaser !='' ">
+			AND a.purchaser LIKE CONCAT('%',#{purchaser}, '%')
+		</if>
+		<if test="sellerName != null and sellerName !='' ">
+			AND a.sellerName LIKE  CONCAT('%',#{sellerName}, '%')
+		</if>
+		<if test="result != null and result !='' and result =='其他'">
+			AND a.result != '真票'
+			AND a.result != '假票'
+		</if>
+		<if test="result != null and result !='' and result !='其他'">
+			AND a.result = #{result}
+		</if>
+
+		<if test="istartTime!=null and iendTime!=null">
+			AND a.invoiceDate BETWEEN #{istartTime} AND #{iendTime}
+		</if>
+		<if test="cstartTime!=null and cendTime!=null">
+			AND a.createDate BETWEEN #{cstartTime} AND #{cendTime}
+		</if>
+		ORDER BY
+		a.createDate DESC
+	</select>
+</mapper>

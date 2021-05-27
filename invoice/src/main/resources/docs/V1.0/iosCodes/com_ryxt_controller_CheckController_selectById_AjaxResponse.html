@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AjaxResponse</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.css">
+<link href="../style.css" rel="stylesheet" />
+</head>
+<body onload="PR.prettyPrint()">
+<pre class="prettyprint">
+<xmp>
+#import <Foundation/Foundation>;
+
+@interface AjaxResponse : NSObject
+
+//是否成功
+@property (nonatomic, strong) BOOL success;
+//状态代码
+@property (nonatomic, strong) NSInteger statusCode;
+//返回消息
+@property (nonatomic, assign) NSString message;
+//数据
+@property (nonatomic, strong) CheckList data;
+
+
+@end
+</xmp>
+</pre>
+
+<pre class="prettyprint">
+<xmp>
+#import <Foundation/Foundation>;
+
+@interface CheckList : NSObject
+
+//ID
+@property (nonatomic, assign) NSString id;
+//查验方式
+@property (nonatomic, assign) NSString checkType;
+//发票种类（增值税电子普通发票；增值税普通发票；增值税专用发票）
+@property (nonatomic, assign) NSString invoiceType;
+//发票代码
+@property (nonatomic, assign) NSString invoiceCode;
+//发票号码
+@property (nonatomic, assign) NSString invoiceNumber;
+//校验码（增值税专用发票无校验码）
+@property (nonatomic, assign) NSString checkCode;
+//不含税价款金额
+@property (nonatomic, assign) NSString excludingTaxPrice;
+//开票日期
+@property (nonatomic, assign) NSString invoiceDate;
+//创建日期
+@property (nonatomic, assign) NSString createDate;
+//处理状态
+@property (nonatomic, assign) NSString status;
+//查验结果
+@property (nonatomic, assign) NSString result;
+//失败原因
+@property (nonatomic, assign) NSString reason;
+//图片地址
+@property (nonatomic, assign) NSString url;
+//用户id
+@property (nonatomic, assign) NSString userId;
+//查验次数
+@property (nonatomic, strong) NSInteger count;
+//是否删除
+@property (nonatomic, assign) NSString deleteFlag;
+//更新日期
+@property (nonatomic, assign) NSString updateDate;
+//查验结果
+@property (nonatomic, strong) CheckResult[] checkResults;
+
+
+@end
+</xmp>
+</pre>
+
+<pre class="prettyprint">
+<xmp>
+#import <Foundation/Foundation>;
+
+@interface CheckResult : NSObject
+
+//ID
+@property (nonatomic, assign) NSString id;
+//发票种类（增值税电子普通发票；增值税普通发票；增值税专用发票）
+@property (nonatomic, assign) NSString invoiceType;
+//发票代码
+@property (nonatomic, assign) NSString invoiceCode;
+//发票号码
+@property (nonatomic, assign) NSString invoiceNumber;
+//校验码（增值税专用发票无校验码）
+@property (nonatomic, assign) NSString checkCode;
+//不含税价款金额
+@property (nonatomic, assign) NSString excludingTaxPrice;
+//开票日期
+@property (nonatomic, assign) NSString invoiceDate;
+//创建日期
+@property (nonatomic, assign) NSString createDate;
+//处理状态
+@property (nonatomic, assign) NSString status;
+//查验结果
+@property (nonatomic, assign) NSString result;
+//失败原因
+@property (nonatomic, assign) NSString reason;
+//图片地址
+@property (nonatomic, assign) NSString url;
+//用户id
+@property (nonatomic, assign) NSString userId;
+//查验次数
+@property (nonatomic, strong) NSInteger count;
+//购买方名称
+@property (nonatomic, assign) NSString purchaser;
+//纳税人识别号
+@property (nonatomic, assign) NSString tin;
+//
+@property (nonatomic, assign) NSString addressAndTelephone;
+//开户行及账号
+@property (nonatomic, assign) NSString accountBankAndNumber;
+//货物或应税劳务服务名称
+@property (nonatomic, assign) NSString nameOfGoodsOrTaxableServices;
+//规格型号
+@property (nonatomic, assign) NSString specificationType;
+//
+@property (nonatomic, assign) NSString unit;
+//
+@property (nonatomic, assign) NSString quantity;
+//
+@property (nonatomic, assign) NSString price;
+//
+@property (nonatomic, assign) NSString taxRate;
+//
+@property (nonatomic, assign) NSString taxAmount;
+//
+@property (nonatomic, assign) NSString totalAmount;
+//
+@property (nonatomic, assign) NSString totalAmountOfTax;
+//
+@property (nonatomic, assign) NSString totalAmountOfPriceAndTax;
+//销售方名称
+@property (nonatomic, assign) NSString sellerName;
+//纳税人识别号
+@property (nonatomic, assign) NSString sellerTin;
+//地址电话
+@property (nonatomic, assign) NSString sellerAddressAndTelephone;
+//开户行及账号
+@property (nonatomic, assign) NSString sellerAccountBankAndNumber;
+//备注
+@property (nonatomic, assign) NSString remarks;
+//收款人
+@property (nonatomic, assign) NSString payee;
+//复核
+@property (nonatomic, assign) NSString review;
+//开票人
+@property (nonatomic, assign) NSString drawer;
+//ocr记录ID
+@property (nonatomic, assign) NSString ocrId;
+//父ID
+@property (nonatomic, assign) NSString parentId;
+
+
+@end
+</xmp>
+</pre>
+
+
+<script src="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.js"></script>
+</body>
+</html>

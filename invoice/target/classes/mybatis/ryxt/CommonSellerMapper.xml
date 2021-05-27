@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ryxt.mapper.CommonSellerMapper" >
+ <select id="findCount" resultType="java.lang.Integer" parameterType="java.util.Map">
+     select count(*)from (
+     SELECT
+     *
+     FROM
+     (
+     SELECT
+     cl.id,
+     cl.purchaser as buyerName,
+     cl.seller_name as sellerName,
+     cl.invoice_type as invoiceType,
+     cl.invoice_code as invoiceCode,
+     cl.invoice_number as invoiceNumber,
+     cl.invoice_date as invoiceDate,
+     cl.create_date as createDate,
+     cl.total_amount as price,
+     cl.total_amount_of_tax as priceTax,
+     cl.total_amount_of_price_and_tax as taxAmount
+     FROM
+     check_list cl
+     INNER JOIN check_list cl2 ON cl.purchaser = cl2.purchaser
+     AND cl.seller_name = cl2.seller_name
+     <![CDATA[ AND cl.invoice_number <> cl2.invoice_number]]>
+     AND cl2.result = '真票'
+     AND cl2.delete_flag != '1'
+     <if test="userId!=null and userId!=''">
+         AND cl2.user_id =#{userId}
+     </if>
+     <if test="startTime != '' and startTime != '' and endTime !=null and endTime != ''">
+         AND cl2.create_date BETWEEN #{startTime} AND #{endTime}
+     </if>
+     WHERE
+     cl.result = '真票'
+     and cl.delete_flag != '1'
+     <if test="userId!=null and userId!=''">
+         AND cl.user_id =#{userId}
+     </if>
+     <if test="startTime != '' and startTime != '' and endTime !=null and endTime != ''">
+         AND cl.create_date BETWEEN #{startTime} AND #{endTime}
+     </if>
+     ) a
+     GROUP BY
+     a.invoiceNumber
+     ) b
+ </select>
+    <select id="getListPage" resultType="com.ryxt.entity.CommonSeller" parameterType="java.util.Map">
+        SELECT
+        *
+        FROM
+        (
+        SELECT
+        cl.id,
+        cl.purchaser as buyerName,
+        cl.seller_name as sellerName,
+        cl.invoice_type as invoiceType,
+        cl.invoice_code as invoiceCode,
+        cl.invoice_number as invoiceNumber,
+        cl.invoice_date as invoiceDate,
+        cl.create_date as createDate,
+        cl.total_amount as price,
+        cl.total_amount_of_tax as priceTax,
+        cl.total_amount_of_price_and_tax as taxAmount
+        FROM
+        check_list cl
+        INNER JOIN check_list cl2 ON cl.purchaser = cl2.purchaser
+        AND cl.seller_name = cl2.seller_name
+        <![CDATA[ AND cl.invoice_number <> cl2.invoice_number]]>
+        AND cl2.result = '真票'
+        AND cl2.delete_flag != '1'
+        <if test="userId!=null and userId!=''">
+            AND cl2.user_id =#{userId}
+        </if>
+        <if test="startTime != '' and startTime != '' and endTime !=null and endTime != ''">
+            AND cl2.create_date BETWEEN #{startTime} AND #{endTime}
+        </if>
+        WHERE
+        cl.result = '真票'
+        and cl.delete_flag != '1'
+        <if test="userId!=null and userId!=''">
+            AND cl.user_id =#{userId}
+        </if>
+        <if test="startTime != '' and startTime != '' and endTime !=null and endTime != ''">
+            AND cl.create_date BETWEEN #{startTime} AND #{endTime}
+        </if>
+        ) a
+        GROUP BY
+        a.invoiceNumber
+        <if test="page!=null and pageSize!=null">
+            limit #{page},#{pageSize};
+        </if>
+ </select>
+</mapper>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CommonListResponse</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.css">
+<link href="../style.css" rel="stylesheet" />
+</head>
+<body onload="PR.prettyPrint()">
+<pre class="prettyprint lang-java">
+public class CommonListResponse implements Serializable{
+
+    private SysDict[] list; //
+    private int totalCount; //
+    private int page; //
+    private int pageSize; //
+    private int pageCount; //
+
+    public SysDict[] getList(){
+        return list;
+    }
+
+    public void setList(SysDict[] list){
+        this.list = list;
+    }
+
+    public int getTotalCount(){
+        return totalCount;
+    }
+
+    public void setTotalCount(int totalCount){
+        this.totalCount = totalCount;
+    }
+
+    public int getPage(){
+        return page;
+    }
+
+    public void setPage(int page){
+        this.page = page;
+    }
+
+    public int getPageSize(){
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize){
+        this.pageSize = pageSize;
+    }
+
+    public int getPageCount(){
+        return pageCount;
+    }
+
+    public void setPageCount(int pageCount){
+        this.pageCount = pageCount;
+    }
+
+}
+</pre>
+
+
+<pre class="prettyprint lang-java">
+public class SysDict implements Serializable{
+
+    private String id; //
+    private String dictName; //
+    private String dictCode; //
+    private String description; //
+    private int delFlag; //
+    private String createBy; //
+    private String createTime; //
+    private String updateBy; //
+    private String updateTime; //
+    private int type; //
+
+    public String getId(){
+        return id;
+    }
+
+    public void setId(String id){
+        this.id = id;
+    }
+
+    public String getDictName(){
+        return dictName;
+    }
+
+    public void setDictName(String dictName){
+        this.dictName = dictName;
+    }
+
+    public String getDictCode(){
+        return dictCode;
+    }
+
+    public void setDictCode(String dictCode){
+        this.dictCode = dictCode;
+    }
+
+    public String getDescription(){
+        return description;
+    }
+
+    public void setDescription(String description){
+        this.description = description;
+    }
+
+    public int getDelFlag(){
+        return delFlag;
+    }
+
+    public void setDelFlag(int delFlag){
+        this.delFlag = delFlag;
+    }
+
+    public String getCreateBy(){
+        return createBy;
+    }
+
+    public void setCreateBy(String createBy){
+        this.createBy = createBy;
+    }
+
+    public String getCreateTime(){
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime){
+        this.createTime = createTime;
+    }
+
+    public String getUpdateBy(){
+        return updateBy;
+    }
+
+    public void setUpdateBy(String updateBy){
+        this.updateBy = updateBy;
+    }
+
+    public String getUpdateTime(){
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime){
+        this.updateTime = updateTime;
+    }
+
+    public int getType(){
+        return type;
+    }
+
+    public void setType(int type){
+        this.type = type;
+    }
+
+}
+</pre>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.js"></script>
+</body>
+</html>

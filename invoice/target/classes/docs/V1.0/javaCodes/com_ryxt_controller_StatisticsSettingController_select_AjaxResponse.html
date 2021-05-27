@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AjaxResponse</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.css">
+<link href="../style.css" rel="stylesheet" />
+</head>
+<body onload="PR.prettyPrint()">
+<pre class="prettyprint lang-java">
+public class AjaxResponse implements Serializable{
+
+    private boolean success; //是否成功
+    private int statusCode; //状态代码
+    private String message; //返回消息
+    private StatisticsSetting data; //数据
+
+    public boolean getSuccess(){
+        return success;
+    }
+
+    public void setSuccess(boolean success){
+        this.success = success;
+    }
+
+    public int getStatusCode(){
+        return statusCode;
+    }
+
+    public void setStatusCode(int statusCode){
+        this.statusCode = statusCode;
+    }
+
+    public String getMessage(){
+        return message;
+    }
+
+    public void setMessage(String message){
+        this.message = message;
+    }
+
+    public StatisticsSetting getData(){
+        return data;
+    }
+
+    public void setData(StatisticsSetting data){
+        this.data = data;
+    }
+
+}
+</pre>
+
+
+<pre class="prettyprint lang-java">
+public class StatisticsSetting implements Serializable{
+
+    private String userId; //
+    private boolean simple; //简版表
+    private boolean detail; //明细表
+    private boolean compare; //信息对比统计表
+    private boolean duplicate; //重复查询统计表
+    private boolean change; //复查结果变更统计表
+    private boolean company; //购买方/销售方信息不符统计表
+    private boolean datematch; //开票日期不符统计表
+    private boolean oneseller; //同一销售方统计表
+
+    public String getUserId(){
+        return userId;
+    }
+
+    public void setUserId(String userId){
+        this.userId = userId;
+    }
+
+    public boolean getSimple(){
+        return simple;
+    }
+
+    public void setSimple(boolean simple){
+        this.simple = simple;
+    }
+
+    public boolean getDetail(){
+        return detail;
+    }
+
+    public void setDetail(boolean detail){
+        this.detail = detail;
+    }
+
+    public boolean getCompare(){
+        return compare;
+    }
+
+    public void setCompare(boolean compare){
+        this.compare = compare;
+    }
+
+    public boolean getDuplicate(){
+        return duplicate;
+    }
+
+    public void setDuplicate(boolean duplicate){
+        this.duplicate = duplicate;
+    }
+
+    public boolean getChange(){
+        return change;
+    }
+
+    public void setChange(boolean change){
+        this.change = change;
+    }
+
+    public boolean getCompany(){
+        return company;
+    }
+
+    public void setCompany(boolean company){
+        this.company = company;
+    }
+
+    public boolean getDatematch(){
+        return datematch;
+    }
+
+    public void setDatematch(boolean datematch){
+        this.datematch = datematch;
+    }
+
+    public boolean getOneseller(){
+        return oneseller;
+    }
+
+    public void setOneseller(boolean oneseller){
+        this.oneseller = oneseller;
+    }
+
+}
+</pre>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.js"></script>
+</body>
+</html>

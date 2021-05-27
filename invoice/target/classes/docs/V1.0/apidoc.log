@@ -1,0 +1,148 @@
+十一月 03, 2020 11:10:15 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find java src paths:  [E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\]
+十一月 03, 2020 11:10:15 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: project type not set, try to figure out...
+十一月 03, 2020 11:10:15 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start find controllers in path : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : OauthLoginQrController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : CheckController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : CompanyController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : DeptController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : DictController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : FileController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : InvoiceDateController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : OcrController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : ParamsController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : ReCheckTaskController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : StatisticsSettingController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : SystemController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : UserController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : OauthLoginQrController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : OauthLoginQrController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : CheckController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : CheckController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : CompanyController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : CompanyController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : DeptController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : DeptController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : DictController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : DictController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : FileController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\FileController.java, className : JSONObject, we cannot found more information of it, you've better to make it a JavaBean
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\FileController.java, className : Map, we cannot found more information of it, you've better to make it a JavaBean
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : FileController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : InvoiceDateController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : InvoiceDateController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : OcrController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : OcrController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : ParamsController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : ParamsController.java
+十一月 03, 2020 11:10:16 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : ReCheckTaskController.java
+十一月 03, 2020 11:10:17 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : ReCheckTaskController.java
+十一月 03, 2020 11:10:17 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : StatisticsSettingController.java
+十一月 03, 2020 11:10:17 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : StatisticsSettingController.java
+十一月 03, 2020 11:10:17 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : SystemController.java
+十一月 03, 2020 11:10:17 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : SystemController.java
+十一月 03, 2020 11:10:17 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : UserController.java
+十一月 03, 2020 11:10:17 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : UserController.java
+十一月 03, 2020 11:10:17 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate api docs start...
+十一月 03, 2020 11:10:17 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\base\controller\OauthLoginQrController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\base\controller\OauthLoginQrController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\CheckController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\CheckController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\CompanyController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\CompanyController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\DeptController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\DeptController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\DictController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\DictController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\FileController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\FileController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\InvoiceDateController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\InvoiceDateController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\OcrController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\OcrController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\ParamsController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\ParamsController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\ReCheckTaskController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\ReCheckTaskController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\StatisticsSettingController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\StatisticsSettingController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\SystemController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\SystemController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\UserController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\work\项目资料\赵毅\发票机器人\项目\invoice\src\main\java\com\ryxt\controller\UserController.java
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate index start !!!
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate index done !!!
+十一月 03, 2020 11:10:18 上午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate api docs done !!!

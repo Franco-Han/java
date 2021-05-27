@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AjaxResponse</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.css">
+<link href="../style.css" rel="stylesheet" />
+</head>
+<body onload="PR.prettyPrint()">
+<pre class="prettyprint lang-java">
+public class AjaxResponse implements Serializable{
+
+    private boolean success; //是否成功
+    private int statusCode; //状态代码
+    private String message; //返回消息
+    private ReCheckTask data; //数据
+
+    public boolean getSuccess(){
+        return success;
+    }
+
+    public void setSuccess(boolean success){
+        this.success = success;
+    }
+
+    public int getStatusCode(){
+        return statusCode;
+    }
+
+    public void setStatusCode(int statusCode){
+        this.statusCode = statusCode;
+    }
+
+    public String getMessage(){
+        return message;
+    }
+
+    public void setMessage(String message){
+        this.message = message;
+    }
+
+    public ReCheckTask getData(){
+        return data;
+    }
+
+    public void setData(ReCheckTask data){
+        this.data = data;
+    }
+
+}
+</pre>
+
+
+<pre class="prettyprint lang-java">
+public class ReCheckTask implements Serializable{
+
+    private String id; //ID
+    private String userId; //用户id
+    private String createDate; //创建日期
+    private String cron; //cron表达式
+    private String taskName; //任务名称
+    private String info; //复查的数据
+    private String cronDate; //执行日期
+
+    public String getId(){
+        return id;
+    }
+
+    public void setId(String id){
+        this.id = id;
+    }
+
+    public String getUserId(){
+        return userId;
+    }
+
+    public void setUserId(String userId){
+        this.userId = userId;
+    }
+
+    public String getCreateDate(){
+        return createDate;
+    }
+
+    public void setCreateDate(String createDate){
+        this.createDate = createDate;
+    }
+
+    public String getCron(){
+        return cron;
+    }
+
+    public void setCron(String cron){
+        this.cron = cron;
+    }
+
+    public String getTaskName(){
+        return taskName;
+    }
+
+    public void setTaskName(String taskName){
+        this.taskName = taskName;
+    }
+
+    public String getInfo(){
+        return info;
+    }
+
+    public void setInfo(String info){
+        this.info = info;
+    }
+
+    public String getCronDate(){
+        return cronDate;
+    }
+
+    public void setCronDate(String cronDate){
+        this.cronDate = cronDate;
+    }
+
+}
+</pre>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.js"></script>
+</body>
+</html>

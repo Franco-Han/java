@@ -1,0 +1,94 @@
+
+server:
+  port: 9528
+  host: http://192.168.0.21
+  servlet:
+    context-path: /
+spring:
+#  jpa:
+#    show-sql: true
+#  session:
+#    store-type: redis
+  application:
+    name: invoice
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver              # mysql驱动包
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 50                                          # 最大连接数
+      max-wait-millis: 200
+      # 等待连接获取的最大超时时间
+  profiles:
+    active: online
+#  redis:
+#    port: 6379
+#    host: localhost
+##    password: lwp
+#    lettuce:
+#      timeout: 3000
+#      pool:
+#        max-active: 8
+#        max-idle: 8
+#        min-idle: 0
+  servlet:
+    multipart:
+      max-file-size: 100Mb
+      max-request-size: 100Mb
+      file-size-threshold: 0
+      enabled: true
+
+logging:
+  level:
+    com.ryxt.mapper : debug
+  config: classpath:logback.xml
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.ryxt.entity    # 所有Entity别名类所在包
+  mapper-locations:
+  - classpath:mybatis/ryxt/*.xml                       # mapper映射文件
+mybatis-plus:
+  #  mapper-locations: classpath:/mapper/**/*Mapper.xml
+  mapper-locations: classpath*:mybatis/ryxt/*.xml
+  type-aliases-package: com.ryxt.entity
+#请求处理的超时时间
+ribbon.ReadTimeout: 8000
+#请求连接的超时时间
+ribbon.ConnectTimeout: 5000
+
+feign:
+  hystrix:
+    enabled: true
+
+#hystrix 熔断机制
+hystrix:
+  shareSecurityContext: true
+  command:
+    default:
+      circuitBreaker:
+        sleepWindowInMilliseconds: 9000
+        forceClosed: true
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 7000
+huaweiOBS:
+  AccessKeyId: SFKUZ7XLIKJFUUCY8UTP
+  SecretAccessKey: vfILvNctcHY94Sy05m4PKoi7q81FcUEVqD4ZgQoH
+  obsEndpoint: obs.cn-north-4.myhuaweicloud.com
+  Bucket: pf-invoice
+
+upload:
+  service:
+    url: http://114.116.102.81:8080/upload
+    gate_path: invoice
+fileserver:
+  domain: https://www.shengxintong.com.cn/fileserver/
+ocr:
+  service:
+    url: http://localhost:5678/cxfServerX/DoVatinvoice
+#    url: http://119.3.182.48/cxfServerX/DoVatinvoice
+
+pythonPath: C:\\workspace\\fpyzm\\nbhh.py
